@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--g-color-canvas);
+    color: #111111;
+    overflow-x: clip;
+  }
+
+  html {
+    font-family: var(--g-font-sans, var(--font-raleway)), Arial, Helvetica, sans-serif;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom service artwork explicitly supplied for this section. */
+#services article > div[aria-hidden="true"] {
+  width: 4.25rem;
+  height: 4.25rem;
+  margin-bottom: 1.75rem;
+  color: transparent;
+  font-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#services article:nth-child(1) > div[aria-hidden="true"] {
+  background-image: url("/brand/services/service-icon-01.svg");
+}
+
+#services article:nth-child(2) > div[aria-hidden="true"] {
+  background-image: url("/brand/services/service-icon-02.svg");
+}
+
+#services article:nth-child(3) > div[aria-hidden="true"] {
+  background-image: url("/brand/services/service-icon-03.svg");
+}

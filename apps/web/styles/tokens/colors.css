@@ -1,0 +1,47 @@
+@theme {
+    /* ==========================================================================
+     Brand
+     ========================================================================== */
+
+    --color-primary: #01362e;
+    --color-primary-foreground: #ffffff;
+
+    --color-secondary: #BB987D;
+    --color-secondary-foreground: #ffffff;
+
+    --color-accent: #F29B57;
+    --color-accent-foreground: #ffffff;
+
+    /* ==========================================================================
+     Surface
+     ========================================================================== */
+
+    --color-background: #efefef;
+    --color-foreground: #111827;
+
+    --color-card: #ffffff;
+    --color-card-foreground: #111827;
+
+    --color-popover: #ffffff;
+    --color-popover-foreground: #111827;
+
+    --color-muted: #f6f6f6;
+    --color-muted-foreground: #6b7280;
+
+    /* ==========================================================================
+     Border
+     ========================================================================== */
+
+    --color-border: #e5e7eb;
+    --color-input: #d1d5db;
+    --color-ring: var(--color-primary);
+
+    /* ==========================================================================
+     Status
+     ========================================================================== */
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-destructive: #ef4444;
+    --color-info: #3b82f6;
+}

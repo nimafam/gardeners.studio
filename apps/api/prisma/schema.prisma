@@ -1,0 +1,708 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+// generator client {
+//   provider = "prisma-client"
+//   output   = "../generated/prisma"
+// }
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum ContentStatus {
+  DRAFT
+  REVIEW
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum StorageDriver {
+  LOCAL
+  S3
+  R2
+}
+
+enum MenuLocation {
+  HEADER
+  FOOTER
+  SOCIAL
+  SLIDE_LEFT
+  SLIDE_RIGHT
+  CUSTOM
+}
+
+enum MenuItemType {
+  CUSTOM_URL
+  POST
+  PAGE
+  PROJECT
+  SERVICE
+  CATEGORY
+}
+
+enum LinkTarget {
+  BLANK
+  SELF
+}
+
+enum ContactRequestStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+  SPAM
+}
+
+enum SubscriberStatus {
+  PENDING
+  SUBSCRIBED
+  UNSUBSCRIBED
+  BOUNCED
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  RESTORE
+
+  PUBLISH
+  UNPUBLISH
+  ARCHIVE
+
+  LOGIN
+  LOGOUT
+}
+
+enum PageStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+// ==================> Models <===========================
+
+// User Model
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  firstName    String?
+  lastName     String?
+  status       UserStatus @default(ACTIVE)
+  avatarId     String?
+  lastLoginAt  DateTime?
+
+  avatar        MediaAsset?    @relation("UserAvatar", fields: [avatarId], references: [id], onDelete: SetNull)
+  roles         UserRole[]
+  refreshTokens RefreshToken[]
+  auditLog      AuditLog[]
+  uploads       MediaAsset[]   @relation("MediaUploadedBy")
+  posts         Post[]         @relation("PostAuthor")
+
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  deletedAt        DateTime?
+  pageCreatedBy    Page[]    @relation("PageCretedBy")
+  pageUpdatedBy    Page[]    @relation("PageUpdatedBy")
+  projectCreatedBy Project[] @relation("ProjectCreatedBy")
+  projectUpdatedBy Project[] @relation("ProjectUpdatedBy")
+
+  @@index([status])
+}
+
+// Role Model
+model Role {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  isSystem    Boolean @default(false)
+
+  users UserRole[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// UserRole Model
+model UserRole {
+  userId String
+  roleId String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, roleId])
+  @@index([roleId])
+}
+
+// RefereshToken Model
+model RefreshToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  revokeAt  DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// AuditLog Model
+model AuditLog {
+  id String @id @default(cuid())
+
+  userId String?
+  action AuditAction
+
+  entityType String
+  entityId   String?
+
+  before   Json?
+  after    Json?
+  metadata Json?
+
+  ipAddress String?
+  userAgent String?
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// HomePageContent Model
+model HomePageContent {
+  id           String @id @default(cuid())
+  singletonKey String @unique @default("homepage")
+
+  heroEyebrow       String?
+  heroTitle         String
+  heroSubtitle      String?
+  heroImageId       String?
+  primaryCtaLabel   String?
+  primaryCtaUrl     String?
+  secondaryCtaLabel String?
+  secondaryCtaUrl   String?
+
+  introTitle        String?
+  introBody         String?
+  servicesTitle     String?
+  servicesIntro     String?
+  projectsTitle     String?
+  projectsIntro     String?
+  testimonialsTitle String?
+  testimonialsIntro String?
+  newsletterTitle   String?
+  newsletterIntro   String?
+
+  seoTitle          String?
+  seoDescription    String?
+  seoCanonicalUrl   String?
+  seoOgTitle        String?
+  seoOgDescription  String?
+  seoOgImageId      String?
+  seoNoIndex        Boolean @default(false)
+  seoNoFollow       Boolean @default(false)
+  seoStructuredData Json?
+
+  heroImage  MediaAsset? @relation("HomeHeroImage", fields: [heroImageId], references: [id], onDelete: SetNull)
+  seoOgImage MediaAsset? @relation("HomeSeoOgImage", fields: [seoOgImageId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Post Model
+model Post {
+  id          String        @id @default(cuid())
+  title       String
+  slug        String        @unique
+  excerpt     String?
+  content     Json?
+  htmlContent String?
+  plainText   String?
+  status      ContentStatus @default(DRAFT)
+
+  publishedAt DateTime?
+  scheduledAt DateTime?
+  deletedAt   DateTime?
+
+  coverImageId String?
+  authorId     String?
+
+  seoTitle          String?
+  seoDescription    String?
+  seoCanonicalUrl   String?
+  seoOgTitle        String?
+  seoOgDescription  String?
+  seoOgImageId      String?
+  seoNoIndex        Boolean @default(false)
+  seoNoFollow       Boolean @default(false)
+  seoStructuredData Json?
+
+  coverImage MediaAsset? @relation("PostCoverImage", fields: [coverImageId], references: [id], onDelete: SetNull)
+  seoOgImage MediaAsset? @relation("PostSeoOgImage", fields: [seoOgImageId], references: [id], onDelete: SetNull)
+  author     User?       @relation("PostAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+
+  categories PostCategory[]
+  tags       PostTag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([slug])
+  @@index([authorId])
+}
+
+// Category Model
+model Category {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  parentId    String?
+
+  parent   Category?      @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children Category[]     @relation("CategoryTree")
+  posts    PostCategory[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([parentId])
+}
+
+// Tag Model
+model Tag {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+
+  posts    PostTag[]
+  projects ProjectTag[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+// PostCategory Model
+model PostCategory {
+  postId     String
+  categoryId String
+
+  post     Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+  @@index([categoryId])
+}
+
+// PostTage Model
+model PostTag {
+  postId String
+  tagId  String
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+}
+
+// Services Model
+
+model Service {
+  id           String        @id @default(cuid())
+  title        String
+  slug         String        @unique
+  summary      String?
+  description  Json?
+  icon         String?
+  status       ContentStatus @default(DRAFT)
+  sortOrder    Int           @default(0)
+  coverImageId String?
+  createdById  String?
+  updatedById  String?
+
+  seoTitle          String?
+  seoDescription    String?
+  seoCanonicalUrl   String?
+  seoOgTitle        String?
+  seoOgDescription  String?
+  seoOgImageId      String?
+  seoNoIndex        Boolean @default(false)
+  seoNoFollow       Boolean @default(false)
+  seoStructuredData Json?
+
+  coverImage MediaAsset? @relation("ServiceCoverImage", fields: [coverImageId], references: [id], onDelete: SetNull)
+  seoOgImage MediaAsset? @relation("ServiceSeoOgImage", fields: [seoOgImageId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Project {
+  id            String        @id @default(cuid())
+  title         String
+  slug          String        @unique
+  summary       String?
+  description   Json?
+  clientName    String?
+  projectUrl    String?
+  repositoryUrl String?
+  status        ContentStatus @default(DRAFT)
+  featured      Boolean       @default(false)
+  sortOrder     Int           @default(0)
+  startedAt     DateTime?
+  completedAt   DateTime?
+  coverImageId  String?
+  createdById   String?
+  updatedById   String?
+
+  seoTitle          String?
+  seoDescription    String?
+  seoCanonicalUrl   String?
+  seoOgTitle        String?
+  seoOgDescription  String?
+  seoOgImageId      String?
+  seoNoIndex        Boolean @default(false)
+  seoNoFollow       Boolean @default(false)
+  seoStructuredData Json?
+
+  coverImage MediaAsset? @relation("ProjectCoverImage", fields: [coverImageId], references: [id], onDelete: SetNull)
+  seoOgImage MediaAsset? @relation("ProjectSeoOgImage", fields: [seoOgImageId], references: [id], onDelete: SetNull)
+
+  images ProjectImage[]
+  tags   ProjectTag[]
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  publishedAt DateTime?
+  deletedAt   DateTime?
+
+  createdBy User? @relation("ProjectCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("ProjectUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@index([status, featured, sortOrder])
+  @@index([completedAt])
+  @@index([deletedAt])
+}
+
+// ProjectImage Model
+model ProjectImage {
+  id           String  @id @default(cuid())
+  projectId    String
+  mediaAssetId String
+  sortOrder    Int     @default(0)
+  caption      String?
+
+  project    Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  mediaAsset MediaAsset @relation("ProjectGalleryImage", fields: [mediaAssetId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([projectId, mediaAssetId])
+  @@index([projectId, sortOrder])
+  @@index([mediaAssetId])
+}
+
+// ProjectTag Model
+model ProjectTag {
+  projectId String
+  tagId     String
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, tagId])
+  @@index([tagId])
+}
+
+// Testimonial Model
+model Testimonial {
+  id          String        @id @default(cuid())
+  personName  String
+  personTitle String?
+  companyName String?
+  content     String
+  rating      Int?
+  status      ContentStatus @default(DRAFT)
+  featured    Boolean       @default(false)
+  sortOrder   Int           @default(0)
+  avatarId    String?
+
+  avatar MediaAsset? @relation("TestimonialAvatar", fields: [avatarId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, featured, sortOrder])
+}
+
+model MediaAsset {
+  id               String        @id @default(cuid())
+  filename         String
+  originalFilename String
+  mimeType         String
+  size             Int
+  width            Int?
+  height           Int?
+  altText          String?
+  caption          String?
+  storageDriver    StorageDriver @default(LOCAL)
+  bucket           String?
+  path             String
+  url              String
+  blurDataUrl      String?
+  folderId         String?
+  uploadedById     String?
+
+  folder     MediaFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  uploadedBy User?        @relation("MediaUploadedBy", fields: [uploadedById], references: [id], onDelete: SetNull)
+
+  userAvatars          User[]            @relation("UserAvatar")
+  homeHeroImages       HomePageContent[] @relation("HomeHeroImage")
+  homeSeoOgImages      HomePageContent[] @relation("HomeSeoOgImage")
+  postCoverImages      Post[]            @relation("PostCoverImage")
+  postSeoOgImages      Post[]            @relation("PostSeoOgImage")
+  pageSeoOImage        Page[]            @relation("PageSeoOImage")
+  coverImage           Page[]            @relation("CoverImage")
+  serviceCoverImages   Service[]         @relation("ServiceCoverImage")
+  serviceSeoOgImages   Service[]         @relation("ServiceSeoOgImage")
+  projectCoverImages   Project[]         @relation("ProjectCoverImage")
+  projectSeoOgImages   Project[]         @relation("ProjectSeoOgImage")
+  projectGalleryImages ProjectImage[]    @relation("ProjectGalleryImage")
+  testimonialAvatars   Testimonial[]     @relation("TestimonialAvatar")
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  pages     Page[]
+
+  @@unique([storageDriver, path])
+  @@index([folderId])
+  @@index([mimeType])
+  @@index([uploadedById])
+}
+
+// MediaFolder Model
+model MediaFolder {
+  id       String  @id @default(cuid())
+  name     String
+  parentId String?
+
+  parent   MediaFolder?  @relation("MediaFolderTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children MediaFolder[] @relation("MediaFolderTree")
+  assets   MediaAsset[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([parentId, name])
+  @@index([parentId])
+}
+
+// Menu Model
+model Menu {
+  id          String       @id @default(cuid())
+  name        String
+  slug        String       @unique
+  description String?
+  isActive    Boolean      @default(true)
+  location    MenuLocation
+
+  items MenuItem[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@unique([location, slug])
+}
+
+// MenuItem Model
+model MenuItem {
+  id            String       @id @default(cuid())
+  menuId        String
+  parentId      String?
+  label         String
+  icon          String?
+  url           String?
+  isActive      Boolean      @default(true)
+  target        LinkTarget   @default(SELF)
+  type          MenuItemType @default(CUSTOM_URL)
+  referenceType String?
+  referenceId   String?
+  sortOrder     Int          @default(0)
+  isVisible     Boolean      @default(true)
+
+  menu     Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  parent   MenuItem?  @relation("MenuItemTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children MenuItem[] @relation("MenuItemTree")
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([menuId, sortOrder])
+  @@index([parentId])
+  @@index([type, referenceId])
+}
+
+// SiteSetting Model
+model SiteSetting {
+  id       String  @id @default(cuid())
+  key      String  @unique
+  value    Json
+  group    String?
+  type     String?
+  isPublic Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([group])
+  @@index([isPublic])
+}
+
+// Redirect Model
+model Redirect {
+  id         String  @id @default(cuid())
+  sourcePath String  @unique
+  targetPath String
+  statusCode Int     @default(301)
+  isActive   Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive])
+}
+
+// ContactRequest Model
+model ContactRequest {
+  id       String               @id @default(cuid())
+  name     String
+  email    String
+  phone    String?
+  company  String?
+  subject  String?
+  message  String
+  status   ContactRequestStatus @default(NEW)
+  source   String?
+  metadata Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+// NewsletterSubscriber Model
+model NewsletterSubscriber {
+  id             String           @id @default(cuid())
+  email          String           @unique
+  firstName      String?
+  lastName       String?
+  status         SubscriberStatus @default(PENDING)
+  source         String?
+  confirmedAt    DateTime?
+  unsubscribedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Setting {
+  id String @id @default(cuid())
+
+  key   String @unique
+  value Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([key])
+}
+
+model Page {
+  id String @id @default(cuid())
+
+  title String
+  slug  String @unique
+
+  content Json?
+
+  excerpt String?
+
+  coverImageId String?
+  coverImage   MediaAsset? @relation("CoverImage", fields: [coverImageId], references: [id], onDelete: SetNull)
+
+  seoTitle          String?
+  seoDescription    String?
+  seoCanonicalUrl   String?
+  seoOgTitle        String?
+  seoOgDescription  String?
+  seoOgImageId      String?
+  seoNoIndex        Boolean @default(false)
+  seoNoFollow       Boolean @default(false)
+  seoStructuredData Json?
+
+  seoOgImage MediaAsset? @relation("PageSeoOImage", fields: [seoOgImageId], references: [id], onDelete: SetNull)
+
+  status PageStatus @default(DRAFT)
+
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  createdById String?
+  updatedById String?
+
+  deletedAt    DateTime?
+  mediaAsset   MediaAsset? @relation(fields: [mediaAssetId], references: [id])
+  mediaAssetId String?
+
+  createdBy User? @relation("PageCretedBy", fields: [createdById], references: [id])
+  updatedBy User? @relation("PageUpdatedBy", fields: [updatedById], references: [id])
+
+  @@index([deletedAt])
+  @@index([status, publishedAt])
+}

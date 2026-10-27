@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#f5f3ec"/>
+  <text x="96" y="116" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="600" fill="#066044" letter-spacing="4">DANADAY BRAND SYSTEM</text>
+  <text x="96" y="190" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="700" fill="#24343a">Color Palette</text>
+  <text x="96" y="236" font-family="Inter,Arial,sans-serif" font-size="22" fill="#6e7777">Primary and category colors for digital and print applications.</text>
+  <g transform="translate(96 316)">
+    <rect width="680" height="260" rx="32" fill="#c9bb31"/>
+    <text x="40" y="58" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" fill="#ffffff">PRIMARY / MUSTARD</text>
+    <text x="40" y="218" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="700" fill="#ffffff">#C9BB31</text>
+  </g>
+  <g transform="translate(824 316)">
+    <rect width="680" height="260" rx="32" fill="#066044"/>
+    <text x="40" y="58" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="600" fill="#ffffff">PRIMARY / FOREST</text>
+    <text x="40" y="218" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="700" fill="#ffffff">#066044</text>
+  </g>
+  <g transform="translate(96 624)">
+    <rect width="320" height="250" rx="28" fill="#941c2f"/>
+    <text x="30" y="54" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#ffffff">CATEGORY / RED</text>
+    <text x="30" y="210" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700" fill="#ffffff">#941C2F</text>
+  </g>
+  <g transform="translate(456 624)">
+    <rect width="320" height="250" rx="28" fill="#74b1d2"/>
+    <text x="30" y="54" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#ffffff">CATEGORY / SKY</text>
+    <text x="30" y="210" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700" fill="#ffffff">#74B1D2</text>
+  </g>
+  <g transform="translate(824 624)">
+    <rect width="320" height="250" rx="28" fill="#24343a"/>
+    <text x="30" y="54" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#ffffff">NEUTRAL / INK</text>
+    <text x="30" y="210" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700" fill="#ffffff">#24343A</text>
+  </g>
+  <g transform="translate(1184 624)">
+    <rect width="320" height="250" rx="28" fill="#ffffff" stroke="#d8d8d1" stroke-width="2"/>
+    <text x="30" y="54" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#24343a">NEUTRAL / PAPER</text>
+    <text x="30" y="210" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700" fill="#24343a">#FFFFFF</text>
+  </g>
+  <image href="../brand/danaday-logo.svg" x="1370" y="72" width="120" height="125"/>
+</svg>

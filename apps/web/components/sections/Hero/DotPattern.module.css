@@ -1,0 +1,28 @@
+.pattern {
+  --dot-size: 2px;
+  --dot-gap: 14px;
+  position: absolute;
+  left: 17%;
+  top: 24%;
+  z-index: -10;
+  width: 66vw;
+  height: 72vh;
+  pointer-events: none;
+  opacity: 0.92;
+  background-image: radial-gradient(circle, rgb(255 255 255 / 98%) 0 var(--dot-size), transparent calc(var(--dot-size) + 0.5px));
+  background-position: 0 0;
+  background-size: var(--dot-gap) var(--dot-gap);
+  clip-path: polygon(0 0, 72% 0, 72% 30%, 100% 30%, 100% 100%, 20% 100%, 20% 66%, 0 66%);
+  transform-origin: center;
+}
+
+@media (max-width: 48rem) {
+  .pattern {
+    --dot-size: 1.5px;
+    --dot-gap: 11px;
+    left: 12%;
+    top: 28%;
+    width: 82vw;
+    height: 58vh;
+  }
+}

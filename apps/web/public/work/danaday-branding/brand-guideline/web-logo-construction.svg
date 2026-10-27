@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#066044" stroke-opacity=".12" stroke-width="1"/></pattern></defs>
+  <rect width="1600" height="1000" fill="#f5f3ec"/>
+  <text x="96" y="116" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="600" fill="#066044" letter-spacing="4">DANADAY BRAND SYSTEM</text>
+  <text x="96" y="190" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="700" fill="#24343a">Logo Construction</text>
+  <text x="96" y="236" font-family="Inter,Arial,sans-serif" font-size="22" fill="#6e7777">Alignment, proportion and minimum clear-space principles.</text>
+  <rect x="96" y="304" width="1408" height="590" rx="36" fill="#ffffff"/>
+  <rect x="96" y="304" width="1408" height="590" rx="36" fill="url(#grid)"/>
+  <line x1="800" y1="344" x2="800" y2="854" stroke="#941c2f" stroke-opacity=".45" stroke-width="2" stroke-dasharray="10 10"/>
+  <line x1="220" y1="599" x2="1380" y2="599" stroke="#941c2f" stroke-opacity=".45" stroke-width="2" stroke-dasharray="10 10"/>
+  <rect x="562" y="386" width="476" height="426" fill="none" stroke="#c9bb31" stroke-width="3" stroke-dasharray="14 10"/>
+  <rect x="630" y="444" width="340" height="310" fill="none" stroke="#066044" stroke-width="3"/>
+  <image href="../brand/danaday-logo.svg" x="676" y="448" width="248" height="258"/>
+  <g font-family="Inter,Arial,sans-serif" font-size="18" fill="#24343a">
+    <text x="108" y="936">CLEAR SPACE = 1× ICON MODULE</text>
+    <text x="1210" y="936">MINIMUM DIGITAL SIZE: 40 PX</text>
+  </g>
+  <path d="M562 370v-26h476v26M546 386h-26v426h26" fill="none" stroke="#24343a" stroke-width="2"/>
+  <text x="760" y="336" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#24343a">1× CLEAR SPACE</text>
+  <text x="472" y="616" transform="rotate(-90 472 616)" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#24343a">VERTICAL PROPORTION</text>
+</svg>

@@ -1,0 +1,117 @@
+{
+  "status": "asset-intake-complete",
+  "title": "Taliapharmed Branding",
+  "slug": "taliapharmed-branding",
+  "client": "ShimojCo",
+  "industry": "Pharmaceutical Industry",
+  "country": "Iran",
+  "year": "2024-2025",
+  "services": [
+    "Core",
+    "Identity",
+    "Digital",
+    "Promotion"
+  ],
+  "challenge": "Establishing strategic clarity around the business scope and translating it into a coherent brand and design system without compromising the character and credibility of the pharmaceutical field.",
+  "contribution": [
+    "Branding Consulting",
+    "Website Design",
+    "Promotional Gifts",
+    "Content Creation",
+    "Event Management"
+  ],
+  "deliverables": [
+    "Branding Consulting",
+    "Event Management",
+    "Website Design",
+    "Logo Book",
+    "Stationery",
+    "Catalogue",
+    "Brochure"
+  ],
+  "outcomeNote": "Only confirmed design deliverables are listed. No pharmaceutical efficacy, regulatory approval, product availability, or commercial performance claim is included.",
+  "projectUrl": "https://taliapharmed.com",
+  "caseStudy": "full",
+  "assets": {
+    "logos": [
+      "/work/taliapharmed-branding/brand/taliapharmed-logo.svg",
+      "/work/taliapharmed-branding/brand/taliapharmed-logo-primary.png",
+      "/work/taliapharmed-branding/brand/taliapharmed-logo-secondary.png",
+      "/work/taliapharmed-branding/brand/taliapharmed-logo-white.png"
+    ],
+    "guidelinePdf": "/work/taliapharmed-branding/brand-guideline/taliapharmed-guideline-v03.pdf",
+    "guidelineOverview": "/work/taliapharmed-branding/brand-guideline/taliapharmed-guideline-overview.png",
+    "brandBook": [
+      "/work/taliapharmed-branding/brand-book/primary-colors.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-01.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-02.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-03.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-colors-01.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-colors-02.pdf",
+      "/work/taliapharmed-branding/brand-book/pattern-colors-03.pdf",
+      "/work/taliapharmed-branding/brand-book/story.pdf",
+      "/work/taliapharmed-branding/brand-book/mission.pdf",
+      "/work/taliapharmed-branding/brand-book/vision.pdf"
+    ],
+    "website": [
+      "/work/taliapharmed-branding/website/home-page.png",
+      "/work/taliapharmed-branding/website/products.png",
+      "/work/taliapharmed-branding/website/single-product.png",
+      "/work/taliapharmed-branding/website/magazine.png",
+      "/work/taliapharmed-branding/website/single-post.png",
+      "/work/taliapharmed-branding/website/about-us.png",
+      "/work/taliapharmed-branding/website/contact-us.png"
+    ],
+    "packagingMockups": [
+      "/work/taliapharmed-branding/packaging/jar-mockup-01.png",
+      "/work/taliapharmed-branding/packaging/jar-mockup-02.png",
+      "/work/taliapharmed-branding/packaging/jar-mockup-03.png"
+    ],
+    "stationeryMockups": [
+      "/work/taliapharmed-branding/stationery/stationery-mockup-01.png",
+      "/work/taliapharmed-branding/stationery/stationery-mockup-02.png",
+      "/work/taliapharmed-branding/stationery/stationery-mockup-03.png",
+      "/work/taliapharmed-branding/stationery/stationery-mockup-04.png",
+      "/work/taliapharmed-branding/stationery/business-card-mockup-01.png"
+    ],
+    "conceptMockups": [
+      "/work/taliapharmed-branding/concept-mockups/website-responsive-english-01.png",
+      "/work/taliapharmed-branding/concept-mockups/identity-system-01.png",
+      "/work/taliapharmed-branding/concept-mockups/packaging-family-01.png",
+      "/work/taliapharmed-branding/concept-mockups/packaging-expanded-formats-01.png",
+      "/work/taliapharmed-branding/concept-mockups/promotional-gifts-01.png",
+      "/work/taliapharmed-branding/concept-mockups/stationery-complete-01.png",
+      "/work/taliapharmed-branding/concept-mockups/environmental-branding-01.png"
+    ]
+  },
+  "brandSystem": {
+    "typography": "Montserrat",
+    "paletteNote": "Guideline provides full green and burgundy tonal scales with a lime green and burgundy-led primary system.",
+    "patternNote": "Three supplied geometric pattern families plus three color-application studies are available in the Brand Book PDFs.",
+    "logoNote": "Horizontal bilingual wordmark combined with a four-point light/star symbol and extended structural lines."
+  },
+  "assetAssessment": {
+    "logos": "A production-ready standalone SVG master is available, with both Persian and English wordmarks converted to vector paths and no embedded raster image or font dependency. Three raster variants remain available as fallbacks.",
+    "guideline": "Single-page guideline includes construction ratios, acceptable and unacceptable logo applications, Montserrat typography, and green/burgundy tonal scales.",
+    "website": "Seven supplied high-resolution website compositions are available and should be used directly in website mockups without UI reinterpretation.",
+    "packaging": "Three supplied jar/bottle design mockups contain placeholder product naming and Lorem Ipsum. Treat as design concepts, not verified pharmaceutical products or labels.",
+    "stationery": "Five supplied stationery and business-card mockups are ready as project presentation assets.",
+    "missing": [
+      "Real product or packaging production photography",
+      "Event photography",
+      "Promotional gift photography or artwork",
+      "Video or logo motion",
+      "Final catalogue and brochure source files"
+    ]
+  },
+  "recommendedWorkImages": [
+    "Logo construction and clear-space composition",
+    "Color system composition",
+    "Montserrat typography composition",
+    "Geometric pattern system composition",
+    "Responsive website mockup using the supplied screens directly",
+    "Packaging family presentation using the supplied mockups",
+    "Stationery presentation using the supplied mockups",
+    "Promotional gift concepts if requested"
+  ]
+}

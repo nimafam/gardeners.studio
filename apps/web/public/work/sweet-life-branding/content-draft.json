@@ -1,0 +1,123 @@
+{
+  "status": "asset-intake-complete",
+  "title": "Sweet Life Branding",
+  "slug": "sweet-life-branding",
+  "client": "ShimojCo",
+  "industry": "Mental Health",
+  "country": "Iran",
+  "year": "2024-2025",
+  "services": [
+    "Core",
+    "Identity",
+    "Digital",
+    "Promotion"
+  ],
+  "challenge": "Integrating the different parts of the mental health center and redesigning the brand, interior, and environmental identity without compromising the coherence or character of the existing space.",
+  "contribution": [
+    "Branding Consulting",
+    "Website Design",
+    "Promotional Gifts",
+    "Content Creation",
+    "Event Management"
+  ],
+  "deliverables": [
+    "Branding Consulting",
+    "Event Management",
+    "Website Design",
+    "Logo Book",
+    "Stationery",
+    "Catalogue",
+    "Brochure"
+  ],
+  "outcomeNote": "Only confirmed deliverables are listed. No unverified commercial or clinical performance claim is included.",
+  "projectUrl": "https://zendegieshirin.com",
+  "caseStudy": "full",
+  "assets": {
+    "logo": "/work/sweet-life-branding/brand/sweet-life-logo.svg",
+    "guidelinePdf": "/work/sweet-life-branding/brand-guideline/sweet-life-guideline.pdf",
+    "guidelineOverview": "/work/sweet-life-branding/brand-guideline/sweet-life-guideline-overview.png",
+    "introVideo": "/work/sweet-life-branding/motion/sweet-life-intro.mp4",
+    "website": [
+      "/work/sweet-life-branding/website/home-page.png",
+      "/work/sweet-life-branding/website/about-us.png",
+      "/work/sweet-life-branding/website/articles.png",
+      "/work/sweet-life-branding/website/single-article.png"
+    ],
+    "guidelineWorkImages": [
+      "/work/sweet-life-branding/brand-guideline/work-logo-construction.png",
+      "/work/sweet-life-branding/brand-guideline/work-color-palette.png",
+      "/work/sweet-life-branding/brand-guideline/work-typography.png",
+      "/work/sweet-life-branding/brand-guideline/work-pattern-system.png"
+    ],
+    "conceptMockups": [
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/website-responsive-exact-source.png",
+        "type": "website-mockup",
+        "sourceAccuracy": "Uses the supplied website screenshots directly without UI reinterpretation."
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/stationery-system-concept-01.png",
+        "type": "stationery-concept"
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/promotional-gift-set-concept-01.png",
+        "type": "promotional-gift-concept"
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/interior-reception-concept-01.png",
+        "type": "interior-environmental-concept",
+        "disclaimer": "Concept visualization only; not documentary photography of the completed location."
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/logo-construction-board-mockup-01.png",
+        "type": "logo-construction-mockup"
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/color-material-palette-mockup-01.png",
+        "type": "color-palette-mockup"
+      },
+      {
+        "path": "/work/sweet-life-branding/concept-mockups/environmental-pattern-mockup-01.png",
+        "type": "environmental-pattern-mockup"
+      }
+    ]
+  },
+  "brandSystem": {
+    "primaryColors": [
+      "#587C37",
+      "#6B893D",
+      "#7FA348",
+      "#6D6E70"
+    ],
+    "secondaryColors": [
+      "#27B2B9",
+      "#BA4A3B"
+    ],
+    "englishTypography": "Segoe UI Variable",
+    "persianTypography": "Yekan Bakh",
+    "pattern": "A repeated family of tree/leaf silhouettes in varied heights; guideline permits horizontal or vertical use at reduced opacity with primary and secondary colors."
+  },
+  "assetAssessment": {
+    "logo": "Production-ready vector artwork.",
+    "guideline": "Single-page guideline containing logo usage, size rules, palette, pattern, and typography.",
+    "website": "Four high-resolution full-page desktop compositions suitable as source material for website mockups. Their embedded placeholder copy and stock imagery should not be treated as verified project facts.",
+    "motion": "Introductory MP4 received; suitable for motion review and potential case-study placement after visual QA.",
+    "missing": [
+      "Interior and environmental design photography",
+      "Event photography",
+      "Stationery production photography",
+      "Catalogue and brochure source files",
+      "Promotional gift photography or artwork"
+    ]
+  },
+  "recommendedWorkImages": [
+    "Logo construction and clear-space composition",
+    "Editorial color-palette composition",
+    "English and Persian typography composition",
+    "Tree-pattern system composition",
+    "Desktop and mobile website mockups",
+    "Stationery system mockup",
+    "Promotional gift mockups",
+    "Interior or environmental mockups only after suitable source imagery is supplied or explicitly approved as conceptual"
+  ]
+}

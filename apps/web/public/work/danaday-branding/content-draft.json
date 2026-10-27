@@ -1,0 +1,79 @@
+{
+  "status": "draft",
+  "title": "Danaday Branding",
+  "slug": "danaday-branding",
+  "client": "Danaday",
+  "industry": "Livestock and Poultry",
+  "country": "Iran",
+  "year": "2024-2025",
+  "projectUrl": "https://danaday.co.com",
+  "projectUrlStatus": "needs-confirmation",
+  "caseStudy": "full",
+  "services": [
+    "Core",
+    "Identity",
+    "Digital",
+    "Promotion",
+    "Edge"
+  ],
+  "challenge": "Danaday needed a coherent brand and communication system for a diverse portfolio of livestock and poultry products. Packaging had to distinguish product categories while remaining adaptable to different buyer requirements. The identity, graphic materials, and website also had to be designed and produced within a limited timeframe.",
+  "contribution": [
+    "Brand consulting",
+    "Brand identity development",
+    "Website strategy and design",
+    "Packaging system design",
+    "Catalogue and brochure design",
+    "Content creation",
+    "Promotional gift concepts",
+    "IranPlex exhibition planning and management"
+  ],
+  "deliverables": [
+    "Brand guideline",
+    "Logo system",
+    "Product packaging family",
+    "Website design",
+    "Catalogue",
+    "Brochure",
+    "Exhibition communication",
+    "Promotional gift concepts"
+  ],
+  "outcome": "A coordinated visual identity, packaging family, digital design system, catalogue, brochure, exhibition presence, and promotional communication toolkit were developed for Danaday. No unverified commercial performance claim is included.",
+  "assets": {
+    "logo": "/work/danaday-branding/brand/danaday-logo.svg",
+    "guidelinePdf": "/work/danaday-branding/brand-guideline/danaday-guideline.pdf",
+    "guidelineOverview": "/work/danaday-branding/brand-guideline/danaday-guideline-overview.png",
+    "catalogueDirectory": "/work/danaday-branding/catalogue/",
+    "websiteDirectory": "/work/danaday-branding/website/",
+    "motion": "/work/danaday-branding/motion/danaday-motion-01.mp4",
+    "packaging": [
+      "/work/danaday-branding/packaging/feed-bag-blue-25kg.jpg",
+      "/work/danaday-branding/packaging/feed-bag-red-25kg.jpg",
+      "/work/danaday-branding/packaging/feed-bag-green-25kg.jpg",
+      "/work/danaday-branding/packaging/feed-bag-product-family.jpg"
+    ],
+    "conceptMockups": [
+      {
+        "src": "/work/danaday-branding/concept-mockups/promotional-tote-in-hand-concept-01.png",
+        "type": "promotional-tote-in-hand",
+        "status": "concept"
+      },
+      {
+        "src": "/work/danaday-branding/concept-mockups/executive-gift-set-concept-01.png",
+        "type": "executive-gift-set",
+        "status": "concept"
+      },
+      {
+        "src": "/work/danaday-branding/concept-mockups/exhibition-welcome-kit-concept-01.png",
+        "type": "exhibition-welcome-kit",
+        "status": "concept"
+      }
+    ]
+  },
+  "sourceNotes": [
+    "Danaday is the confirmed official spelling.",
+    "The supplied project URL could not be verified and should be confirmed before publication.",
+    "The promotional gift images are concept mockups and must not be presented as manufactured deliverables without confirmation.",
+    "The supplied ZIP archives contain website screens despite their ShimojCO filenames.",
+    "Keep commercial results unpublished unless the client supplies verifiable metrics."
+  ]
+}

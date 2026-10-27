@@ -1,0 +1,50 @@
+{
+  "status": "draft",
+  "title": "Nexel Branding",
+  "slug": "nexel-branding",
+  "client": "Nexel",
+  "industry": "AI, Smart Technology & Engineering Services",
+  "country": "Iran",
+  "year": "2023",
+  "projectUrl": "https://nexelhub.com/",
+  "caseStudy": "full",
+  "services": [
+    "Core",
+    "Identity",
+    "Digital",
+    "Promotion"
+  ],
+  "challenge": "Nexel was entering a new and evolving field of activity spanning artificial intelligence, smart technology, and engineering services. The project needed to define a clear brand concept and design system capable of supporting the breadth and future dimensions of the business.",
+  "contribution": [
+    "Brand consulting",
+    "Brand strategy",
+    "Brand creation",
+    "Visual identity and logo design",
+    "Logo guideline and logo book design",
+    "Website strategy and design",
+    "Event planning and management",
+    "Event calendar design"
+  ],
+  "deliverables": [
+    "Brand identity system",
+    "Logo and logo variations",
+    "Logo book and usage guidelines",
+    "Website design",
+    "Event calendar",
+    "Event management"
+  ],
+  "outcome": "A coordinated identity, digital design foundation, and event communication system was created for Nexel. No unverified commercial performance claim is included.",
+  "assets": {
+    "guidelineDirectory": "/work/nexel-branding/brand-guideline/",
+    "guidelineCover": "/work/nexel-branding/brand-guideline/guideline-01-cover.png",
+    "logoVariations": "/work/nexel-branding/brand-guideline/guideline-02-logo-variations.png",
+    "brandMockups": "/work/nexel-branding/brand-guideline/guideline-14-brand-mockups.png"
+  },
+  "sourceNotes": [
+    "The original nexel.fig source is available outside public assets and contains website and design-system frames.",
+    "The supplied guideline cover displays a 2024 copyright line while the project year is currently recorded as 2023; confirm whether the public year should be 2023 or 2023-2024.",
+    "Add exported website screens from the Figma source before the Digital chapter is considered media-complete.",
+    "Add event-calendar exports and event photography before presenting the Promotion chapter visually.",
+    "Keep commercial results unpublished unless the client supplies verifiable metrics."
+  ]
+}

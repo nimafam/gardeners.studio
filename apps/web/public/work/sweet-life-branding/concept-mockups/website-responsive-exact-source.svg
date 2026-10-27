@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+ <defs>
+  <filter id="s" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#233216" flood-opacity=".18"/></filter>
+  <clipPath id="desktop"><rect x="95" y="145" width="930" height="540" rx="12"/></clipPath>
+  <clipPath id="tablet"><rect x="1036" y="275" width="348" height="492" rx="14"/></clipPath>
+  <clipPath id="phone"><rect x="1370" y="428" width="174" height="377" rx="20"/></clipPath>
+ </defs>
+ <rect width="1600" height="1000" fill="#f3f3ed"/>
+ <path d="M0 760C260 570 438 950 720 730s468 188 880-60v330H0z" fill="#dce5d4" opacity=".75"/>
+ <g opacity=".09" fill="#587c37"><path d="M1330 20c-88 108-66 245 0 282 66-37 88-174 0-282zm-6 270h12v190h-12z"/><path d="M1480 70c-66 82-50 186 0 214 50-28 66-132 0-214zm-5 206h10v158h-10z"/></g>
+ <g filter="url(#s)">
+  <rect x="70" y="118" width="980" height="600" rx="30" fill="#26302c"/><rect x="95" y="145" width="930" height="540" rx="12" fill="#fff"/>
+  <image href="../website/home-page.png" x="95" y="145" width="930" height="5091" preserveAspectRatio="none" clip-path="url(#desktop)"/>
+  <path d="M490 718h140l18 90H472z" fill="#b8bab5"/><rect x="400" y="798" width="320" height="28" rx="14" fill="#d2d4cf"/>
+ </g>
+ <g filter="url(#s)"><rect x="1015" y="250" width="390" height="545" rx="34" fill="#222b27"/><rect x="1036" y="275" width="348" height="492" rx="14" fill="#fff"/>
+  <image href="../website/articles.png" x="1036" y="275" width="348" height="1034" preserveAspectRatio="none" clip-path="url(#tablet)"/><circle cx="1210" cy="782" r="7" fill="#6d6e70"/>
+ </g>
+ <g filter="url(#s)"><rect x="1354" y="408" width="206" height="425" rx="36" fill="#1f2824"/><rect x="1370" y="428" width="174" height="377" rx="20" fill="#fff"/>
+  <image href="../website/single-article.png" x="1370" y="428" width="174" height="947" preserveAspectRatio="none" clip-path="url(#phone)"/><rect x="1418" y="416" width="78" height="8" rx="4" fill="#111"/>
+ </g>
+ <g font-family="Segoe UI,Arial,sans-serif" fill="#344037"><text x="70" y="78" font-size="20" letter-spacing="5">RESPONSIVE DIGITAL EXPERIENCE</text><text x="1105" y="930" font-size="18">HOME · ARTICLES · SINGLE ARTICLE</text></g>
+</svg>

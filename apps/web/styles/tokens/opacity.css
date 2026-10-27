@@ -1,0 +1,6 @@
+@theme {
+    --opacity-disabled: 0.38;
+    --opacity-muted: 0.6;
+    --opacity-overlay: 0.72;
+    --opacity-backdrop: 0.82;
+}

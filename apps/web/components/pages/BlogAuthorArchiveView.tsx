@@ -1,0 +1,16 @@
+import Link from "next/link";
+import Image from "next/image";
+
+type Post = { slug: string; category: string; date: string; title: string; excerpt: string };
+
+export function BlogAuthorArchiveView({ posts }: { posts: readonly Post[] }) {
+  return <main className="bg-[var(--g-color-canvas)] px-[var(--g-gutter)] pb-32 pt-44 text-[var(--g-color-primary)] md:pb-44 md:pt-56">
+    <section className="mx-auto max-w-[1440px]">
+      <div className="grid gap-10 border-b border-[var(--g-color-primary)]/35 pb-16 md:grid-cols-[220px_1fr] md:items-end"><div className="relative aspect-square overflow-hidden rounded-[20px] bg-white"><Image src="/brand/about/figma-image-3.jpg" alt="Jessy James" fill priority sizes="220px" className="object-cover" /></div><div><p className="text-xs uppercase tracking-[0.2em] opacity-45">Gardeners Journal author</p><h1 className="mt-5 text-[clamp(4rem,8vw,8rem)] font-semibold leading-[0.82] tracking-[-0.065em] text-black">Jessy James</h1><p className="mt-7 max-w-2xl text-lg leading-8 opacity-65">Placeholder author biography. This archive collects every article written by Jessy James and is ready to receive author data from the CMS.</p></div></div>
+
+      <div className="mt-14 flex items-end justify-between gap-8 border-b border-[var(--g-color-primary)]/25 pb-6"><div><p className="text-xs uppercase tracking-[0.18em] opacity-45">Search results</p><h2 className="mt-3 text-[clamp(2.5rem,4vw,4.5rem)] font-semibold tracking-[-0.05em] text-black">Articles by this author</h2></div><span className="text-sm opacity-45">{posts.length} articles</span></div>
+
+      {posts.length ? <div className="mt-10 grid gap-x-7 gap-y-14 md:grid-cols-2">{posts.map((post,index)=><article key={post.slug}><Link href={`/blog/${post.slug}`} className="group block"><div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-[var(--g-color-primary)]"><div className="absolute inset-0" style={{background:`radial-gradient(circle at ${index%2 ? "78% 28%" : "24% 68%"},#E2E417 0%,#779633 24%,#003F3F 67%)`}}/><div className="absolute inset-0 opacity-40 [background-image:radial-gradient(circle,rgba(255,255,255,.95)_0_1.3px,transparent_1.7px)] [background-size:12px_12px]"/><span className="absolute bottom-6 left-6 text-xs uppercase tracking-[0.2em] text-white/65">Article · 0{index+1}</span></div><span className="mt-5 inline-flex rounded-full bg-[var(--g-color-accent)] px-4 py-2 text-xs uppercase tracking-[0.12em]">{post.category}</span><h3 className="mt-4 text-[clamp(2rem,3.2vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-black transition-colors group-hover:text-[var(--g-color-primary)]">{post.title}</h3><p className="mt-4 max-w-2xl text-sm leading-6 opacity-55">{post.excerpt}</p><p className="mt-4 text-xs uppercase tracking-[0.12em] opacity-35">{post.date} · 6 min read</p></Link></article>)}</div> : <div className="mt-16 rounded-[20px] border border-[var(--g-color-primary)]/25 p-12 text-center"><h3 className="text-3xl font-semibold">No articles found</h3><p className="mt-3 opacity-55">This author has no published articles yet.</p><Link href="/blog" className="mt-7 inline-block text-sm underline">Return to Journal</Link></div>}
+    </section>
+  </main>;
+}

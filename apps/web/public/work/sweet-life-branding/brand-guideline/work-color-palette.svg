@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+ <rect width="1600" height="1000" fill="#f7f7f3"/>
+ <path d="M0 0h640v590H0z" fill="#587c37"/><path d="M640 0h480v590H640z" fill="#6b893d"/><path d="M1120 0h480v590h-480z" fill="#7fa348"/>
+ <path d="M0 590h530v410H0z" fill="#6d6e70"/><path d="M530 590h535v410H530z" fill="#27b2b9"/><path d="M1065 590h535v410h-535z" fill="#ba4a3b"/>
+ <g font-family="Segoe UI,Arial,sans-serif" fill="#fff"><text x="58" y="86" font-size="17" letter-spacing="4">PRIMARY / 01</text><text x="58" y="530" font-size="34" font-weight="700">#587C37</text><text x="690" y="530" font-size="34" font-weight="700">#6B893D</text><text x="1170" y="530" font-size="34" font-weight="700">#7FA348</text><text x="58" y="930" font-size="34" font-weight="700">#6D6E70</text><text x="580" y="930" font-size="34" font-weight="700">#27B2B9</text><text x="1115" y="930" font-size="34" font-weight="700">#BA4A3B</text></g>
+ <g opacity=".3" fill="#fff"><path d="M80 180c-55 68-42 152 0 176 42-24 55-108 0-176zm-3 170h6v98h-6z"/><path d="M160 214c-45 56-34 125 0 145 35-20 45-89 0-145zm-3 140h6v94h-6z"/><path d="M242 152c-62 76-47 171 0 197 47-26 62-121 0-197zm-3 190h6v106h-6z"/></g>
+</svg>

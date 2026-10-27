@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+ <defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#587c37" stroke-opacity=".035"/></pattern><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 0 0 4 8 8" fill="none" stroke="#6d6e70" stroke-width="1"/></marker></defs>
+ <rect width="1600" height="1000" fill="#f7f7f3"/><rect width="1600" height="1000" fill="url(#g)"/>
+ <g fill="none" stroke="#587c37" stroke-width="1.5" opacity=".27">
+  <rect x="436" y="128" width="728" height="744"/><rect x="520" y="190" width="560" height="620"/>
+  <line x1="800" y1="96" x2="800" y2="904" stroke="#ba4a3b" stroke-dasharray="8 10"/>
+  <line x1="388" y1="546" x2="1212" y2="546" stroke="#ba4a3b" stroke-dasharray="8 10"/>
+  <circle cx="650" cy="360" r="154" stroke="#7fa348"/><circle cx="800" cy="330" r="183"/><circle cx="950" cy="330" r="218" stroke="#7fa348"/>
+  <path d="M602 180 650 546 800 132 950 546 1018 104"/>
+  <line x1="520" y1="696" x2="1080" y2="696" stroke="#27b2b9"/>
+ </g>
+ <image href="../brand/sweet-life-logo.svg" x="620" y="250" width="360" height="480"/>
+ <g fill="none" stroke="#6d6e70" stroke-width="1.4" opacity=".42">
+  <line x1="436" y1="920" x2="1164" y2="920" marker-start="url(#a)" marker-end="url(#a)"/>
+  <line x1="380" y1="128" x2="380" y2="872" marker-start="url(#a)" marker-end="url(#a)"/>
+ </g>
+ <g font-family="Segoe UI,Arial,sans-serif" fill="#344037"><text x="74" y="112" font-size="22" letter-spacing="5">PROPORTION / CLEAR SPACE</text><text x="770" y="954" font-size="18">12X</text><text x="344" y="520" font-size="18" transform="rotate(-90 344 520)">12.3X</text><text x="1210" y="190" font-size="15" font-weight="700">KEY GEOMETRY</text><text x="1210" y="226" font-size="14">01  Three organic vertical forms</text><text x="1210" y="256" font-size="14">02  Shared baseline</text><text x="1210" y="286" font-size="14">03  Optical spacing</text><text x="1210" y="316" font-size="14">04  Clear-space module</text><text x="74" y="900" font-size="14" font-weight="700">MINIMUM PRINT SIZE</text><text x="74" y="938" font-size="30" font-weight="700" fill="#587c37">15 MM</text></g>
+</svg>

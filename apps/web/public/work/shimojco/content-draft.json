@@ -1,0 +1,51 @@
+{
+  "status": "draft",
+  "title": "ShimojCo",
+  "slug": "shimojco",
+  "client": "ShimojCo Holding",
+  "industry": "Health",
+  "country": "Iran",
+  "year": "2024-2025",
+  "projectUrl": "https://shimoj.co/",
+  "caseStudy": "full",
+  "services": [
+    "Core",
+    "Identity",
+    "Digital",
+    "Promotion",
+    "Edge"
+  ],
+  "challenge": "ShimojCo needed to establish a coherent holding brand within a limited timeframe while strengthening an underdeveloped organizational structure. The challenge was to create a unified strategic and visual foundation for a portfolio of health-related businesses and translate it consistently across organizational, digital, editorial, and event touchpoints.",
+  "contribution": [
+    "Brand consulting",
+    "Brand strategy",
+    "Organizational structure development",
+    "Website design and implementation",
+    "Video content production",
+    "Editorial content production",
+    "Exhibition planning and management"
+  ],
+  "deliverables": [
+    "Print-ready corporate catalogue",
+    "Print-ready corporate brochure",
+    "Promotional gifts",
+    "Designed and implemented corporate website",
+    "IranPlex 2025 exhibition delivery"
+  ],
+  "outcome": "A coordinated set of brand, organizational, editorial, digital, promotional, and exhibition touchpoints was delivered for ShimojCo. No unverified commercial performance claim is included.",
+  "assets": {
+    "logo": "/work/shimojco/brand/logo-primary.svg",
+    "symbol": "/work/shimojco/brand/logo-symbol.svg",
+    "wordmarkFa": "/work/shimojco/brand/logo-wordmark-fa.svg",
+    "logoMotion": "/work/shimojco/motion/logo-motion.mp4",
+    "websiteDesktop": "/work/shimojco/website/website-desktop-full.png",
+    "websiteMobile": "/work/shimojco/website/website-mobile-full.png",
+    "brochureCover": "/work/shimojco/brochure/brochure-mockup-cover.jpg",
+    "brochureOpen": "/work/shimojco/brochure/brochure-mockup-open.jpg",
+    "catalogueHero": "/work/shimojco/catalogue/catalogue-mockup-01.jpg"
+  },
+  "reviewNotes": [
+    "Add exhibition photography or video before presenting IranPlex 2025 as a visual case-study chapter.",
+    "Keep commercial results unpublished unless the client supplies verifiable metrics."
+  ]
+}

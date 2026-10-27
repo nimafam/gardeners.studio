@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+ <rect width="1600" height="1000" fill="#eef2eb"/>
+ <g transform="translate(0 90)">
+  <g fill="#587c37"><path d="M90 410C5 300 40 130 90 70c50 60 85 230 0 340zm-5-10h10v230H85z"/><path d="M260 455c-70-90-40-230 0-280 40 50 70 190 0 280zm-5-10h10v185h-10z"/></g>
+  <g fill="#6b893d"><path d="M450 390c-95-122-55-312 0-378 55 66 95 256 0 378zm-6-12h12v252h-12z"/><path d="M650 470c-68-86-39-220 0-268 39 48 68 182 0 268zm-5-10h10v170h-10z"/></g>
+  <g fill="#7fa348"><path d="M835 420c-88-112-50-286 0-348 50 62 88 236 0 348zm-6-10h12v220h-12z"/><path d="M1035 465c-66-84-38-214 0-260 38 46 66 176 0 260zm-5-10h10v175h-10z"/></g>
+  <g fill="#27b2b9"><path d="M1215 375c-96-124-55-316 0-384 55 68 96 260 0 384zm-6-10h12v265h-12z"/></g><g fill="#ba4a3b"><path d="M1435 452c-72-92-41-234 0-285 41 51 72 193 0 285zm-5-10h10v188h-10z"/></g>
+ </g>
+ <g font-family="Segoe UI,Arial,sans-serif" fill="#344037"><text x="72" y="90" font-size="22" letter-spacing="5">ORGANIC RHYTHM / PATTERN SYSTEM</text><text x="72" y="915" font-size="18">Variable height · horizontal or vertical flow · reduced opacity applications</text></g>
+ <g opacity=".13" transform="translate(0 650) scale(1 .55)"><path d="M0 500C250 200 450 710 690 330s430 350 910-120v500H0z" fill="#587c37"/></g>
+</svg>

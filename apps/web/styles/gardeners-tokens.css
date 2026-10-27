@@ -1,0 +1,58 @@
+:root {
+  --g-color-primary: #003f3f;
+  --g-color-secondary: #b2b3b6;
+  --g-color-accent: #e2e417;
+  --g-color-ink: #003f3f;
+  --g-color-paper: #ffffff;
+  --g-color-canvas: #eaeaea;
+  --g-color-control: #f8f8f8;
+  --g-color-muted: #6e7373;
+  --g-color-line: rgb(0 63 63 / 16%);
+  --g-font-sans: var(--font-raleway), Arial, Helvetica, sans-serif;
+  --g-font-editorial: var(--font-raleway), Arial, Helvetica, sans-serif;
+  --g-text-xs: 0.75rem;
+  --g-text-sm: 0.875rem;
+  --g-text-body: clamp(1rem, 0.94rem + 0.25vw, 1.25rem);
+  --g-text-lead: clamp(1.5rem, 1.12rem + 1.55vw, 3rem);
+  --g-text-display: clamp(3.5rem, 1.2rem + 9.5vw, 11rem);
+  --g-text-hero: clamp(4.5rem, 1.4rem + 13vw, 16.875rem);
+  --g-space-1: 0.25rem;
+  --g-space-2: 0.5rem;
+  --g-space-3: 0.75rem;
+  --g-space-4: 1rem;
+  --g-space-5: 1.5rem;
+  --g-space-6: 2rem;
+  --g-space-7: 3rem;
+  --g-space-8: 4rem;
+  --g-space-9: 6rem;
+  --g-space-10: 9rem;
+  --g-container: 90rem;
+  --g-gutter: clamp(1.25rem, 0.8rem + 1.8vw, 2.5rem);
+  --g-section-space: clamp(6rem, 4.2rem + 6vw, 11rem);
+  --g-grid-gap: clamp(1rem, 0.8rem + 0.8vw, 2rem);
+  --g-radius-sm: 0.75rem;
+  --g-radius-md: 1.25rem;
+  --g-radius-control: 1.25rem;
+  --g-radius-pill: 999px;
+  --g-control-height: 4.375rem;
+  --g-textarea-height: 11.125rem;
+  --g-shadow-soft: 0 1.5rem 4rem rgb(0 0 0 / 8%);
+  --g-duration-fast: 160ms;
+  --g-duration-base: 320ms;
+  --g-duration-slow: 700ms;
+  --g-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --g-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --g-border: 1px solid rgb(0 0 0 / 18%);
+}
+
+@media (max-width: 47.999rem) {
+  :root { --g-section-space: 5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --g-duration-fast: 1ms;
+    --g-duration-base: 1ms;
+    --g-duration-slow: 1ms;
+  }
+}
